@@ -1,0 +1,270 @@
+Aula 0:
+
+Python Software Foundation – fundação do Python
+
+É uma linguagem de propósito geral, multiplataforma e battery included (com funcionalidades/bibliotecas necessárias), 
+código aberto, orientada a objetos.
+
+áreas boas p se aplicar python: IA, biotecnologia, computação 3D
+
+Aula 1:
+Mensagens tem delimitadores especiais
+Todos os comandos são funções
+
+Toda variável é um objeto para o python
+
+nome = 'Guanabara' (nome recebe Guanabara)
+
+IDE: PyCharm
+
+Tipos primitivos : int, float, bool (True/False), str
+
+Operadores aritméticos:
++: soma
+-:subtração
+*: multiplicação
+/: divisão
+**: potência
+//: divisão inteira
+%: resto da divisão
+
+operador binário: precisa de 2 operandos
+
+operador relacional de igualdade são dois símbolos de = (==)
+
+ordem de precedência: 1.parênteses, 2.potência, 3. multiplicação, divisão, divisão inteira e resto divisão e 4. soma e subtração binárias
+
+bibliotec math: ceil, floor, pow, trunc, sqrt, factorial
+
+importar biblioteca: import math  
+ou from math import sqrt
+
+
+Manipulando cadeias de textos (caracteres)
+string - sempre entre aspas simples ou duplas
+
+frase = 'Curso em Vídeo Python'
+
+frase[9] = 'V'
+frase[9:13]='Víde', exclui o ultimo valor
+frase[9:21:2] - vai no 9 ao 21 pulando de 2 em 2, ou seja, excluindo os valores pulados
+frase[:5] = 'Curso'
+frase[15:] - do 15 até o final
+frase[9::3] - vai do 9 ao final pulando de 3 em 3, e excluindo valores pulados
+
+len(frase) = 21 (número de espaços)
+frase.count('o') - contar quantos 'o' existem na frase
+frase.count('o', 0, 13) - no intervalo de 0 a 13, conta quantos 'o' existem  (lembrando que o último valor fica de fora)
+frase.find('deo') - em qual lugar começa o conjunto que se encontra na frase, se não existe o conjunto na frase, irá retornar -1
+
+'Curso' in frase - retorna True ou False
+
+frase.replace('Python', 'Android') -  substitui a palavra Python por Android na frase
+
+frase.upper() - o que já é maiúsculo mantém, o que não for maiúsculo é trocado por maiusculo
+
+frase.lower() - faz o contrário da upper
+
+frase.capitalize() - só a primeira letra da frase em maiúsculo
+
+frase.title() - primeira letra de cada palavra em maiúsculo
+
+Remover espaços no início e no final da cadeia:
+frase.strip()
+frase.rstrip() - remove somente os espaços do lado direito
+frase.lstrip() - remove somente os espaços do lado esquerdo
+
+frase.split() - feito nos espaços, cria uma divisão dentro da frase, gerando uma lista com as palavras geradas
+'-'.join(frase) - junta as palavras usando o elemento inicial, gerando uma só frase, pode ser espaço em branco
+
+textos longos - print(""" Texto longo """)
+
+frase.upper().count('o')
+
+len(frase.strip())
+
+print('Curso' in frase)
+
+frase.lower().find('vídeo')
+
+padrão ANSI de cores: \033[(estilo)(texto)(fundo)m
+
+exemplo:\033[0:33:44m
+
+estilo:0,1,4 e 7
+cores: de 30 a 37
+
+
+Condições Aninhadas:
+
+if
+elif
+else
+
+
+Estruturas de repetição
+
+Laços 
+
+for c in range(1,10):
+    passo 
+pega
+
+for c in range(0,3):
+    passo
+    pula
+passo
+pega
+
+for c in range(0,6):
+    print('Oi')
+print('FIM')
+
+o python ignora o último valor do parenteses
+
+contar para trás: (6,0,-1)
+
+for c in range(6,0,-1)
+    print(c)
+print('FIM')
+
+contar pulando de 2 e 2: (0,7,2)
+
+pep: python enhancement proposal (proposta de melhoria do python)
+
+break no while - para a execução e sai
+
+VARIÁVEIS COMPOSTAS
+Em python existem 3 tipos de variáveis compostas : tuplas, listas e dicionários 
+
+"As tuplas são imutáveis"
+lanche = () [] {} (tupla/lista/dicionário)
+
+função está relacionado a rotina (coisas feitas constantemente)
+
+def mostraLinha():
+    print('------------------------------------------')
+
+entre def e o programa principal tem que ter duas linhas
+
+passando um parametro em uma função:
+def mensagem(msg):
+    print('---------------------------------')
+    print(msg)
+    print('---------------------------------')
+
+mensagem('SISTEMA DE ALUNOS')
+
+def título(txt):
+    print('-'*30)
+    print(txt)
+    print('-'*30)
+
+
+
+def soma(a,b):
+    s = a + b
+    print(s)
+
+
+soma(4, 5)
+soma(8, 9)
+soma(2, 1)
+
+empacotamento de parâmetros:
+
+def contador(*núm):
+    for valor in núm:
+        print(f'{valor}', end='')
+    print('FIM!')
+
+contador(5, 7, 3, 1, 4)
+contador(8, 4, 7)
+contador(7, 0)
+
+
+def dobra(lst):
+    pos = 0
+    while pos<len(lst):
+        lst[pos]*=2
+        pos+=1
+
+valores =  [7,2,5,0,4]
+dobra(valores)
+print(valores)
+
+(tudo que é feito em lst interfere na lista valores)
+
+def soma(* valores):
+    s = 0 
+    for num in valores:
+        s += num
+    print(f'Somando os valores {valores} temos {s}')
+
+soma(5, 2)
+soma(2, 9, 4)
+
+Interactive Help: help()
+no arquivo colocar help(funçao) e executar - vai aparecer as instruções sobre aquela funcionalidades
+print(input.__doc__)
+help(input)
+
+docstring: string de documentação
+
+exemplo:
+
+def contador(i, f, p)
+"""
+Faz uma contagem e mostra na tela. 
+param i : início da contagem
+param f: fim da contagem
+param p: passo da contagem
+return: sem retorno
+"""
+(resto do código da função)
+
+help(contador) vai mostrar o texto digitado
+
+parâmetros opcionais
+
+def somar(a,b,c=0):
+s = a+b+c
+print(f'A soma vale {s}')
+(se não receber c, c valerá 0)
+
+escopo de variável - é onde ela existe e funciona
+pode ser escopo global 
+variáveis que existem dentro de função só funcionam na função - escopo local
+
+retorno de valores - funções podem ou não retornar valores
+
+def somar(a=0,b=0,c=0)
+    s = a+b+c
+    return s
+
+r1 = somar (3,2,5)
+r2 = somar(1,7)
+r3 = somar(4)
+
+print(f'Meus ´calculos deram {r1}, {r2} e {r3}')
+o return não é apenas para número, pode ser retornado valor lógico 
+
+Modularização - surgiu na década de 60 com os códigos ficando cada vez maiores... 
+o foco era dividir  um programa grande , aumentar a legibilidade e facilitar a manutenção
+
+pacote - é a junção de módulos separados por assunto
+todo arquivo é potencialmente um módulo
+toda pasta é considerada um pacote
+
+__init__.py - arquivo dentro de cada uma das pastas
+
+Tratamento de erros em Python:
+
+Try:
+    operação
+Except: (TypeError/ValueError/etc)
+    falhou
+Else:
+    deu certo
+Finally:
+deu certo/falha
