@@ -1,0 +1,2 @@
+def quem():
+    print("Tamirinha")
